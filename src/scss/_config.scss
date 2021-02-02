@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+$primary-color: #272727;
+/*$primary-color: #192116;*/
+$secondary-color: #558ab6;
+$deep-blueaa: #165F8C;
+$deep-blue: #225a9b;
+$deep-bluess: #558ab6;
+$red-wines: #8C2D24;
+$red-wine: #FF8B00;
+$red: #FF8B00;
+$orange: #FF652F;
+
+$white: #FFF;
+$log-cabin: #192116;
+$white:#f2f2f2;
+$blue-sky: #B3DAF2;
+$forrest-green: #162614;
+$mustard: #8C6F16;
+$forrest-brown: #A6702E;
+$beige: #D9CAC1; 
+
+$thin: 100;
+$medium: 500;
+$bold: 700; 
+
+
+@mixin flex-center($direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin transition($property: all, $duration: .3s, $timing: ease-in-out ) {
+    -webkit-transition: $property $duration $timing;
+    -o-transition: $property $duration $timing;
+    transition: $property $duration $timing;
+}
+
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+
+@mixin position-top-left($type: relative, $top: 0, $left: 0) {
+    position: $type;
+    top: $top;
+    left: $left;
+}
+
+@mixin position-top-right($type: relative, $top: 0, $right: 0) {
+    position: $type;
+    top: $top;
+    right: $right;
+}
+
+@function setTextColor($color) {
+    @if(lightness($color) > 40%) {
+        @return #000;
+    } @else {
+        @return $white;
+    }
+}
+.fade-left, .fade-right {
+    @include transition(all, .5s);
+}
+
+.fade-left {
+    @include transform(translateX(-100vw) rotateY(-180deg));
+}
+
+.fade-right {
+    @include transform(translateX(100vw) rotateY(-180deg));
+}
+
+.show {
+    @include transform(translateX(0) rotateY(0deg));
+}

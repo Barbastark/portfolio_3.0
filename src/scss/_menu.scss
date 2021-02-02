@@ -1,0 +1,103 @@
+.menu-btn {
+    @include transition();
+    @include position-top-right(absolute, 1.2rem, 1.2rem);
+    height: 20px;
+    width: 28px;
+    cursor: pointer;
+
+    &__burger {
+        @include transition();
+        @include position-top-right(absolute, .5rem);
+        width: 28px;
+        height: 3px;
+        background: $white;
+
+        &::before, &::after {
+            @include transition();
+            content: "";
+            width: 28px;
+            height: 3px;
+            background: $white;
+        }
+
+        &::before {
+            @include position-top-left(absolute, -8px)
+        }
+        
+        &::after {
+            @include position-top-left(absolute, 8px)
+        }
+
+        &.open {
+            background: transparent;
+            
+            &::before {
+                @include transform(rotate(45deg) translate(5px, 8px));
+            }
+        
+            &::after {
+                @include transform(rotate(-45deg) translate(3px, -7px));
+            }
+        }
+    }
+}
+
+.nav {
+    @include transition();
+    @include transform(translateX(-100vw));
+    @include position-top-left(absolute);
+    width: 100vw;
+    letter-spacing: 7px;
+
+    &.open {
+        @include transform(translateX(0));
+    }
+
+    .menu-nav {
+        @include flex-center(column);
+        @include transition();
+        @include transform(translateX(-100vw) scale(0,0));
+        flex-wrap: wrap;
+        height: 100vh;
+        overflow: hidden;
+        background: $deep-blue;
+        list-style: none;
+                
+        &.open {
+            @include transform(translateX(0) scale(1,1));
+        }
+
+        &__item {
+            @include transition();
+            @include transform(skewY(30deg));
+            font-size: 0vw;
+
+            &.open {
+                @include transform(skewY(0deg));
+                font-size: 9vw;
+            }
+        }
+        &__link {
+            color: $white;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            padding: 2rem 0;
+            font-weight: 400;
+
+            &:hover {
+                color: $white;
+            }
+
+            &.active {
+                color: $red-wine;
+            }
+        }
+    }
+}
+
+@for $i from 1 through 4 {
+    .menu-nav__item:nth-child(#{$i}) {
+        transition-delay: ($i * .15s) + .3s;
+    } 
+}
