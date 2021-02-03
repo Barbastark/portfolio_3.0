@@ -1,5 +1,5 @@
 import React from "react"
-import {BrowserRouter as Router} from "react-router-dom"
+import {BrowserRouter as Router, useHistory} from "react-router-dom"
 import {aboutPageData as pageData} from "../mock_data/mockData"
 import AnimatedSwitch from "../components/animated_router/AnimatedSwitch"
 import Nav from "../components/animated_router/Nav"
@@ -66,6 +66,7 @@ const About = () => {
          },
          pageData
     }
+    
     return(
         <>
         <PageBanner />

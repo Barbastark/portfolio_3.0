@@ -45,5 +45,8 @@
             @include transform(translateX(0));
         }
     }
-
+    
+}
+.full-height + footer {
+    display: none;
 }

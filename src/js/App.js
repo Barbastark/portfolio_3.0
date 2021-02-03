@@ -73,6 +73,7 @@ const App = () => {
                     <Contact />
                 </Route>
             </Switch>
+            <Footer />
         
         
         </>

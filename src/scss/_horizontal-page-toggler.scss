@@ -49,19 +49,6 @@
             a.active {
                 color: $deep-blue;
             }
-            /*button::after {
-                @include transition(all, .5s);
-                @include transform(scaleX(0));
-                @include position-top-left(relative, .8rem);
-                display: block;
-                content: '';
-                border-bottom: 2px solid $red-wine;
-                border-radius: 1px;
-            }
-            
-            button.active::after {
-                @include transform(scaleX(.8));
-            }*/
         }
     }
 }

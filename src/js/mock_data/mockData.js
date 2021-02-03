@@ -121,6 +121,23 @@ const aboutPageData = [
     }
 ]
 
+const footerData = {
+    mailIcon: "fa fa-envelope",
+    mailTo: "mailto:niklas.lindb3rg@gmail.com",
+    email: "niklas.lindb3rg@gmail.com",
+    socialLinks: [
+        {
+            key: "footerLink1",
+            link: "https://www.linkedin.com/in/niklas-lindberg-4695b659/",
+            icon: "fa fa-linkedin fa-3x"  
+        },
+        {
+            key: "footerLink2",
+            link: "https://github.com/Barbastark?tab=repositories",
+            icon: "fa fa-git fa-3x"  
+        }
+    ]
 
+}
 
-export {routerData, siteNavData, aboutPageData, homePageData, aboutNavData}
+export {routerData, siteNavData, aboutPageData, homePageData, aboutNavData, footerData}
