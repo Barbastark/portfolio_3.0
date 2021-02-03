@@ -3,6 +3,7 @@
 	text-align: center;
     padding: 20px 10px 15px 10px;
     color: $white;
+    flex-shrink: 0;
 
     section {
         padding-bottom: 20px;
@@ -27,20 +28,3 @@
     }
     
 }
-
-/*footer > div > div:nth-child(1), footer > div > div:nth-child(2) {
-	padding-bottom: 20px;
-}*/
-/*footer > div > div:nth-child(3) {
-	border-top: 1px solid #fff;
-	padding-top: 15px;
-}
-footer i:nth-child(1) {
-	margin-bottom: 10px;
-}
-footer a {
-	text-decoration: none;
-}
-footer ul {
-	list-style: none;
-}*/
