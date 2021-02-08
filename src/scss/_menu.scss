@@ -76,6 +76,7 @@
             @include transform(skewY(30deg));
             font-size: 0vw;
             width: 100%;
+
             &.open {
                 @include transform(skewY(0deg));
                 font-size: 9vw;
@@ -104,7 +105,7 @@
     }
 }
 
-@for $i from 1 through 4 {
+@for $i from 1 through 5 {
     .menu-nav__item:nth-child(#{$i}) {
         transition-delay: ($i * .15s) + .3s;
     } 

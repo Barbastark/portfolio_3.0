@@ -1,81 +1,32 @@
 import React from "react"
-import {Switch, Route, useHistory} from "react-router-dom"
-import {routerData, aboutPageData, homePageData} from "./mock_data/mockData"
+import AnimatedSwitch from "./components/animated_router/AnimatedSwitch"
 import Header from "./components/Header"
-import Footer from "./components/Footer"
 import Home from "./pages/Home"
-import About from "./pages/About"
+import AboutMe from "./pages/AboutMe"
+import Cv from "./pages/Cv"
 import Projects from "./pages/Projects"
 import Contact from "./pages/Contact"
 
 const App = () => { 
-
-
-    const fetchComponent = (component, path) => {
-        switch(component) {
-            case "home" :
-                return <Home data={homePageData} />
-            break;
-    
-            case "about" :
-                return aboutPageData.map((item, i) => {
-                    if(item.slug === path) {
-                        return <About key={i} data={{...item}} />
-                    }
-            })
-            break;
-    
-            case "projects" :
-                return <Projects />
-            break;
-    
-            case "contact" :
-                return <Contact />
-            break;
-    
-            default: return false
+    const switchConfig = {
+        paths: ["/", "/aboutme", "/cv", "/projects", "/contact"],
+        routes: [
+            { path: '/', Component: Home },
+            { path: '/aboutme', Component: AboutMe },
+            { path: '/cv', Component: Cv },
+            { path: '/projects', Component: Projects },
+            { path: '/contact', Component: Contact }
+        ],
+        classNames: {
+            next: "slide-forward", 
+            prev: "slide-backward"
         }
     }
     
-    const routes = routerData.map(({key, exactPath, path, component }) => {
-        if(exactPath) {
-            return(
-                <Route exact path={path} key={key} >
-                    {fetchComponent(component, path)}
-                </Route>
-            )
-        }
-        return (
-            <Route path={path} key={key}>
-                {fetchComponent(component, path)}
-            </Route>
-        ) 
-    }) 
-    
     return (
         <>
-        
             <Header />
-            <Switch>
-                <Route exact path="/">
-                    <Home />
-                </Route>
-                <Route exact path="/about/aboutme">
-                    <About />
-                </Route>
-                <Route path="/about/cv">
-                    <About />
-                </Route>
-                <Route path="/projects">
-                    <Projects />
-                </Route>
-                <Route path="/contact">
-                    <Contact />
-                </Route>
-            </Switch>
-            <Footer />
-        
-        
+            <AnimatedSwitch config={switchConfig} />
         </>
     )
 }

@@ -1,8 +1,9 @@
 import React from "react"
+import {cvData as data} from "../mock_data/mockData"
 
 const Cv = props => {
     
-    const {headerText, content} = props.data
+    const {headerText, content} = data
     
     return(
         <section className="about__main slide-backward" >

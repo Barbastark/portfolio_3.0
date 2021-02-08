@@ -1,8 +1,8 @@
 import React from "react"
-
-const AboutMe = props => {
+import {aboutPageData as data} from "../mock_data/mockData"
+const AboutMe = () => {
     
-    const {headerText, content} = props.data
+    const {headerText, content} = data
     
     return(
         <section className="about__main slide-forward" >

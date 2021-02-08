@@ -3,20 +3,31 @@ import {NavLink, useLocation} from "react-router-dom"
 
 const Nav = props => {
 
-    const {paths, routes, classNames} = props.config       
-    const {navClass, navListClass, navListItemClass, activeClassName} = classNames
+    const {paths, routes, classNames, clickHandler} = props.config       
+    
+    const {
+        navClass, 
+        navListClass, 
+        navListItemClass, 
+        navLinkClass, 
+        activeClass, 
+        openClass
+    } = classNames
+
     const location = useLocation()
     const currentScreen = paths.indexOf(location.pathname)
      
     const NavLinks = routes.map(({to, linkText}, i) => (
         <li 
-            style={{ width: `${100 / paths.length}%`}} 
             key={navListItemClass + i} 
-            className={navListItemClass}
+            className={openClass ? `${navListItemClass} ${openClass}` : navListItemClass}
+            onClick={clickHandler}
         >
             <NavLink
-                to={{ pathname: to, state: { previousScreen: currentScreen } }}  
-                activeClassName={activeClassName} 
+                exact
+                to={{ pathname: to, state: { previousScreen: currentScreen } }}
+                className={navLinkClass}  
+                activeClassName={activeClass}
                 activeStyle={{pointerEvents: "none"}}
             >{linkText}
             </NavLink>
@@ -24,8 +35,8 @@ const Nav = props => {
     ))
 
     return (
-        <nav className={navClass}>
-            <ul className={navListClass}>
+        <nav className={openClass ? `${navClass} ${openClass}` : navClass}>
+            <ul className={openClass ? `${navListClass} ${openClass}` : navListClass}>
                 {NavLinks}         
             </ul>
         </nav>

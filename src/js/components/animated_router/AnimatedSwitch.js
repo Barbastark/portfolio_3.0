@@ -8,7 +8,7 @@ const AnimatedSwitch = props => {
     const {paths, routes, classNames, pageData} = props.config
     const location = useLocation()
     const {state, pathname, key} = location
-    const content = pageData.filter(({slug}) => slug === pathname )[0]
+    //const content = pageData.filter(({slug}) => slug === pathname )[0]
     
     const currentScreen = paths.indexOf(pathname)
     const previousScreen = state ? state.previousScreen : 0
@@ -16,7 +16,7 @@ const AnimatedSwitch = props => {
     
     const routesArr = routes.map(({ path, Component }) => ( 
         <Route key={path} exact path={path} >
-            <Component data={content}/>
+            <Component />
         </Route>)  
     )
 
@@ -31,7 +31,7 @@ const AnimatedSwitch = props => {
             <CSSTransition
                 key={key}
                 classNames={animationClassNames}
-                timeout={500}
+                timeout={1500}
             >
                 <Switch location={location}>
                     {routesArr}

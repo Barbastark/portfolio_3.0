@@ -1,6 +1,7 @@
 .slide-forward-enter,
 .slide-forward-exit {
   transition: transform 500ms ease-out;
+  transition-delay: .3s;
 }
 
 .slide-forward-enter {
@@ -13,7 +14,7 @@
 
 .slide-forward-exit {
   position: absolute;
-  top: calc(4vw + 1.88rem);
+  top: 0;
   left: 0;
   width: 100%;
   transform: translateX(0%) rotateY(0);
@@ -26,6 +27,7 @@
 .slide-backward-enter,
 .slide-backward-exit {
   transition: transform 500ms ease-out;
+  transition-delay: .3s;
 }
 
 .slide-backward-enter {
@@ -38,7 +40,7 @@
 
 .slide-backward-exit {
   position: absolute;
-  top: calc(4vw + 1.88rem);
+  top: 0;
   left: 0;
   width: 100%;
   transform: translateX(0%) rotateY(0);

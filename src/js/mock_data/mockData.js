@@ -1,3 +1,4 @@
+
 const routerData = [
     {
         id: "1",
@@ -10,7 +11,7 @@ const routerData = [
         id: "2",
         component: "about",
         routeKey: "routeItem_2",
-        path: "/about/aboutme",
+        path: "/aboutme",
         exactPath: true,
     },
     {
@@ -36,6 +37,7 @@ const routerData = [
     }
     
 ]
+
 const siteNavData = [
     {
      id: "1",
@@ -86,40 +88,18 @@ const homePageData =
 }
 
 
-const aboutPageData = [
-    {
-        id: "1",
-        key: "aboutPageContent1",
-        slug: "/about/aboutme",
-        fadeClass: "fade-left",   
-        headerText: "Om mig",
-        content: "Color contrast is a common web accessibility issue that is often overlooked. People who may have low vision, or may be colorblind, could encounter some difficulty distinguishing text from a background color if the contrast is insufficient. There are nearly three times more individuals with low vision than those with total blindness; and one out of twelve people has some sort of color deficiency. So, it is critical to consider adequate contrast between text and backgrounds." 
-    },
-    {
-        id: "2",   
-        key: "aboutPageContent2",
-        slug: "/about/cv",
-        fadeClass: "fade-right",   
-        headerText: "CV",
-        content: "Color contrast is a common web accessibility issue that is often overlooked. People who may have low vision, or may be colorblind, could encounter some difficulty distinguishing text from a background color if the contrast is insufficient. There are nearly three times more individuals with low vision than those with total blindness; and one out of twelve people has some sort of color deficiency. So, it is critical to consider adequate contrast between text and backgrounds. Color contrast is a common web accessibility issue that is often overlooked. People who may have low vision, or may be colorblind, could encounter some difficulty distinguishing text from a background color if the contrast is insufficient. There are nearly three times more individuals with low vision than those with total blindness; and one out of twelve people has some sort of color deficiency. So, it is critical to consider adequate contrast between text and backgrounds."
-    },
-    {
-        id: "3",
-        key: "aboutPageContent3",
-        slug: "/about/test1",
-        fadeClass: "fade-left",   
-        headerText: "Test1",
-        content: "Color contrast is a common web accessibility issue that is often overlooked. People who may have low vision, or may be colorblind, could encounter some difficulty distinguishing text from a background color if the contrast is insufficient. There are nearly three times more individuals with low vision than those with total blindness; and one out of twelve people has some sort of color deficiency. So, it is critical to consider adequate contrast between text and backgrounds." 
-    },
-    {
-        id: "4",   
-        key: "aboutPageContent3",
-        slug: "/about/test2",
-        fadeClass: "fade-right",   
-        headerText: "Test2",
-        content: "Color contrast is a common web accessibility issue that is often overlooked. People who may have low vision, or may be colorblind, could encounter some difficulty distinguishing text from a background color if the contrast is insufficient. There are nearly three times more individuals with low vision than those with total blindness; and one out of twelve people has some sort of color deficiency. So, it is critical to consider adequate contrast between text and backgrounds. Color contrast is a common web accessibility issue that is often overlooked. People who may have low vision, or may be colorblind, could encounter some difficulty distinguishing text from a background color if the contrast is insufficient. There are nearly three times more individuals with low vision than those with total blindness; and one out of twelve people has some sort of color deficiency. So, it is critical to consider adequate contrast between text and backgrounds."
-    }
-]
+const aboutPageData = {
+    id: "1",
+    headerText: "Om mig",
+    content: "Color contrast is a common web accessibility issue that is often overlooked. People who may have low vision, or may be colorblind, could encounter some difficulty distinguishing text from a background color if the contrast is insufficient. There are nearly three times more individuals with low vision than those with total blindness; and one out of twelve people has some sort of color deficiency. So, it is critical to consider adequate contrast between text and backgrounds." 
+}
+
+
+const cvData = {
+    id: "2",   
+    headerText: "CV",
+    content: "Color contrast is a common web accessibility issue that is often overlooked. People who may have low vision, or may be colorblind, could encounter some difficulty distinguishing text from a background color if the contrast is insufficient. There are nearly three times more individuals with low vision than those with total blindness; and one out of twelve people has some sort of color deficiency. So, it is critical to consider adequate contrast between text and backgrounds. Color contrast is a common web accessibility issue that is often overlooked. People who may have low vision, or may be colorblind, could encounter some difficulty distinguishing text from a background color if the contrast is insufficient. There are nearly three times more individuals with low vision than those with total blindness; and one out of twelve people has some sort of color deficiency. So, it is critical to consider adequate contrast between text and backgrounds."
+}
 
 const footerData = {
     mailIcon: "fa fa-envelope",
@@ -196,7 +176,8 @@ const contactFormData = {
 export {
     routerData, 
     siteNavData, 
-    aboutPageData, 
+    aboutPageData,
+    cvData, 
     homePageData, 
     aboutNavData, 
     footerData, 
