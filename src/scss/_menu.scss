@@ -1,42 +1,47 @@
 .menu-btn {
     @include transition();
-    @include position-top-right(absolute, 1.2rem, 1.2rem);
-    height: 20px;
-    width: 28px;
+    position: fixed;
+    bottom: 1.9rem;
+    right: 1.9rem;
+    height: 45px;
+    width: 53px;
+    background: #488989;
+    background: transparent;
+    border-radius: 45%;
     cursor: pointer;
 
     &__burger {
         @include transition();
-        @include position-top-right(absolute, .5rem);
-        width: 28px;
-        height: 3px;
+        @include position-top-right(absolute, 20px, 12px  );
+        width: 35px;
+        height: 2px;
         background: $white;
 
         &::before, &::after {
             @include transition();
             content: "";
-            width: 28px;
-            height: 3px;
-            background: $white;
+            width: 35px;
+            height: 2px;
+            background:$white;
         }
 
         &::before {
-            @include position-top-left(absolute, -8px)
+            @include position-top-left(absolute, -15px)
         }
         
         &::after {
-            @include position-top-left(absolute, 8px)
+            @include position-top-left(absolute, 15px)
         }
 
         &.open {
             background: transparent;
             
             &::before {
-                @include transform(rotate(45deg) translate(5px, 8px));
+                @include transform(rotate(45deg) translate(12px, 15px));
             }
         
             &::after {
-                @include transform(rotate(-45deg) translate(3px, -7px));
+                @include transform(rotate(-45deg) translate(6px, -9px));
             }
         }
     }
@@ -57,10 +62,9 @@
         @include flex-center(column);
         @include transition();
         @include transform(translateX(-100vw) scale(0,0));
-        flex-wrap: wrap;
         height: 100vh;
         overflow: hidden;
-        background: $secondary-color;
+        background: rgba(#307082, 0.9);
         list-style: none;
                 
         &.open {
@@ -71,10 +75,12 @@
             @include transition();
             @include transform(skewY(30deg));
             font-size: 0vw;
-
+            width: 100%;
             &.open {
                 @include transform(skewY(0deg));
                 font-size: 9vw;
+                text-align: center;
+                
             }
         }
         &__link {
@@ -82,15 +88,17 @@
             text-decoration: none;
             display: inline-block;
             text-transform: uppercase;
-            padding: 2rem 0;
-            font-weight: 400;
-
+            padding: 3.2rem 0;
+            font-weight: 100;
+            width: 100%;
+            
             &:hover {
                 color: $white;
             }
 
             &.active {
-                color: $red-wine;
+                color: #FAE81B;
+                border-left: 2px solid rgba(#FA1B63, 0.5);
             }
         }
     }

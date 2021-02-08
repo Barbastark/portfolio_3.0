@@ -140,4 +140,65 @@ const footerData = {
 
 }
 
-export {routerData, siteNavData, aboutPageData, homePageData, aboutNavData, footerData}
+const contactFormData = {
+    nodes: [
+        {
+            id: 1,
+            name: "name",
+            ["aria-label"]: "name",
+            type: "text",
+            placeholder: "Namn *"
+        },
+        {
+            id: 2,
+            name: "subject",
+            ["aria-label"]: "subject",
+            type: "text",
+            placeholder: "Ämne *"
+        },
+        {
+            id: 3,
+            name: "email",
+            ["aria-label"]: "email",
+            type: "email",
+            placeholder: "E-Post *"
+        },
+        {
+            id: 4,
+            name: "spamfilter",
+            ["aria-label"]: "spam-filter",
+            type: "text",
+            placeholder: "Vad blir 2+2 *"
+        },
+        {
+            id: 5,
+            name: "message",
+            ["aria-label"]: "message",
+            type: "textarea",
+            placeholder: "Skriv ett meddelande *",
+            
+        },
+        {
+            id: 6,
+            type: "button",
+            text: "Skicka"
+        }
+    ],
+    state: {
+        name: "",
+        subject: "",
+        email: "",
+        spamfilter: "",
+        message: ""
+    }
+}
+
+export {
+    routerData, 
+    siteNavData, 
+    aboutPageData, 
+    homePageData, 
+    aboutNavData, 
+    footerData, 
+    contactFormData
+}

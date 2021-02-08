@@ -1,0 +1,75 @@
+.contact {
+    @include flex-center(column);
+    width: 100vw;
+    min-height: 100vh;
+    background: $white;
+      
+    &__main {
+        padding: 4rem .8rem;
+        width: 100%;
+        
+        form {
+            width: 95%;
+            margin: 0 auto;
+            background: transparent;
+            padding: 1rem;
+            color: $white;
+            
+            input[type=text], input[type=email], textarea {
+                  font-size: 1.6rem;
+                  width: 100%; 
+                  padding: 1.2rem;  
+                  background: rgba($white, 1.0);
+                  border: 1px solid #182626; 
+                  border-radius: 4px; 
+                  box-sizing: border-box; 
+                  margin-top: .6rem; 
+                  margin-bottom: 1.6rem;
+                  outline-width: 30px; 
+                  outline-color: #17CFCD;
+                  font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            textarea {
+                  height: 19.4rem;
+                  font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            button {
+                  background-color: rgba(#ED7934, 0.9);
+                  color: rgba($white, 0.9);
+                  font-size: 1.95rem;
+                  padding: .9rem 0;
+                  border: 1px solid rgba(#ED7934, 0.9);
+                  border-radius: 4px;
+                  margin-bottom: 1.6rem;
+                  width: 100%;
+            }
+
+            button:hover {
+                  background-color: #ED7934;
+                  cursor: pointer;
+            }
+
+            button, button:hover {
+                  transition: all 0.3s ease-in-out;
+            }
+
+            span[id*="error"] {
+                color: #be2835;
+                font-size: 1.4rem;
+                font-weight: bold;
+                margin-left: .5rem;
+            }
+
+            #req-field-sm {
+                display: block;
+                margin-top: .5rem;
+            }
+
+            #req-field-lg {
+                display: none;
+            }
+        }
+    }
+}  
