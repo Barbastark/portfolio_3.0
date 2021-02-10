@@ -1,12 +1,17 @@
 .about {
     @include position-top-left();
     width: 100vw;
+    height: 100vh;
     flex: 1 0 auto;
-                    
+    background: #307082;   
+                  
+    
     &__main {
         padding: 4rem .8rem;
         @include position-top-left();
-        width: 100%;   
+        width: 100%;
+        
+        p {color: $white;}   
         
     }
 }

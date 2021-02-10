@@ -3,51 +3,28 @@
 @import "./home";
 @import "./about";
 @import "./contact";
-@import "./horizontal-page-toggler";
-@import "./page-banner";
 @import "./animated-router";
-@import "./footer";
 
 html, body {
     height: 100%;
+    overflow-x: hidden;
 }
 
 html {
     font-size: 10px;
+    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body {
-    background-color: $white;
-    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-   
-}
 #root {
     min-height: 100%;
-    overflow-x: hidden;
+    background: #307082;
     display: flex;
     flex-direction: column;
 }
 
 header {
     @include position-top-left(fixed);
-    @include flex-center;
     z-index: 2;
-    width: 100vw;
-    padding: 3rem;
-   /* background:linear-gradient(
-        to bottom ,
-        rgba(#1C1526, 1.0),
-        rgba(#1C1526, 0.9) 90%,
-        rgba(#1C1526, 0.8) 80%,
-        rgba(#1C1526, 0.7) 70%,
-        rgba(#1C1526, 0.6) 60%,
-        rgba(#1C1526, 0.5) 50%,
-        rgba(#1C1526, 0.4) 40%,
-        rgba(#1C1526, 0.3) 30%,
-        rgba(#1C1526, 0.2) 20%,
-        rgba(#1C1526, 0.1) 10%,
-        rgba(#1C1526, 0.0) 
-    );*/
 }
 
 main.full-height {
@@ -55,8 +32,8 @@ main.full-height {
 }
 
 .page-heading {
-    color: #2F9696;
-    font-weight: 400;
+    color: #FAE81B;
+    font-weight: 200;
     font-size: 9vw;
     letter-spacing: 7px;
     margin-bottom: 2.5rem;
@@ -65,10 +42,12 @@ main.full-height {
 
 .page-text {
     color: #484641;
-    font-weight: $medium;
-    font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+    font-weight: 100;
     font-size: 15px;
     line-height: 1.8;
     text-align: center;
 }
 
+@media screen and (min-width: 767px) {
+    
+}

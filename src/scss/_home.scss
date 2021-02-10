@@ -15,7 +15,7 @@
         width: 100vw;
         padding-bottom: 1rem;
         margin-bottom: 1rem;
-        border-bottom: 2px solid rgba(#FA1B63, 0.5);
+        border-bottom: 2px solid rgba(#B03059, 0.7);
         
         &--last {
             color: #FAE81B;
@@ -40,6 +40,16 @@
     }
     
 }
-.full-height + footer {
-    display: none;
+
+@media screen and (min-width: 767px) {
+    .home {
+        &__name {
+            font-size: 6vmin;
+            
+        }
+        &__occupation {
+            font-size: 3vmin;   
+        }
+    }
+   
 }

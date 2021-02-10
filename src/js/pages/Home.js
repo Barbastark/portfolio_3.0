@@ -8,7 +8,7 @@ const Home = () => {
     const {firstName, lastName, occupation} = pageData
     
     useEffect(() => {
-        setTimeout(() => {setShow(true)}, 500)
+        setTimeout(() => {setShow(true)}, 1000)
     }, [])
     
     return(

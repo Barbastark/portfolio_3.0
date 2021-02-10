@@ -5,7 +5,7 @@ const SiteNav = ({openClass, toggleOpenState}) => {
     const navConfig = {
         paths: ["/", "/aboutme", "/cv", "/projects", "/contact"],
         routes: [
-            { to: '/', linkText: "home" },
+            { to: '/', linkText: "start" },
             { to: '/aboutme', linkText: "om mig" },
             { to: '/cv', linkText: "mitt cv" },
             { to: '/projects', linkText: "projekt" },

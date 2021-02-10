@@ -2,7 +2,7 @@
     @include flex-center(column);
     width: 100vw;
     min-height: 100vh;
-    background: $white;
+    background: #307082;
       
     &__main {
         padding: 4rem .8rem;
@@ -36,18 +36,18 @@
             }
 
             button {
-                  background-color: rgba(#ED7934, 0.9);
+                  background-color: #B03059;
                   color: rgba($white, 0.9);
                   font-size: 1.95rem;
                   padding: .9rem 0;
-                  border: 1px solid rgba(#ED7934, 0.9);
+                  border: 1px solid #B03059;
                   border-radius: 4px;
                   margin-bottom: 1.6rem;
                   width: 100%;
             }
 
             button:hover {
-                  background-color: #ED7934;
+                  background-color: #B03059;
                   cursor: pointer;
             }
 

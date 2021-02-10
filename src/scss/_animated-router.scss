@@ -1,15 +1,20 @@
+
+/*Forward*/
+
 .slide-forward-enter,
 .slide-forward-exit {
-  transition: transform 500ms ease-out;
+  transition: all 500ms ease-out;
   transition-delay: .3s;
 }
 
 .slide-forward-enter {
   transform: translateX(100%) rotateY(180deg);
+  
 }
 
 .slide-forward-enter.slide-forward-enter-active {
   transform: translateX(0%);
+  
 }
 
 .slide-forward-exit {
@@ -24,9 +29,11 @@
   transform: translateX(-100%) rotateY(-180deg);
 }
 
+/*Backward*/
+
 .slide-backward-enter,
 .slide-backward-exit {
-  transition: transform 500ms ease-out;
+  transition: all 500ms ease-out;
   transition-delay: .3s;
 }
 
@@ -48,4 +55,13 @@
 
 .slide-backward-exit-active {
   transform: translateX(100%) rotateY(180deg);
+}
+
+@media screen and (min-width: 767px) {
+   .slide-forward-enter,
+   .slide-forward-exit,
+   .slide-backward-enter,
+   .slide-backward-exit {
+     gtransition: all 2s ease-out;
+   }
 }

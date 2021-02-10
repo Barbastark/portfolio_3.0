@@ -2,12 +2,9 @@
     @include transition();
     position: fixed;
     bottom: 1.9rem;
-    right: 1.9rem;
+    left: calc(100vw - 1.9rem - 53px);
     height: 45px;
     width: 53px;
-    background: #488989;
-    background: transparent;
-    border-radius: 45%;
     cursor: pointer;
 
     &__burger {
@@ -64,7 +61,7 @@
         @include transform(translateX(-100vw) scale(0,0));
         height: 100vh;
         overflow: hidden;
-        background: rgba(#307082, 0.9);
+        background: #255663;
         list-style: none;
                 
         &.open {
@@ -79,7 +76,7 @@
 
             &.open {
                 @include transform(skewY(0deg));
-                font-size: 9vw;
+                font-size: 9vmin;
                 text-align: center;
                 
             }
@@ -90,6 +87,7 @@
             display: inline-block;
             text-transform: uppercase;
             padding: 3.2rem 0;
+            padding: 5vmin 0;
             font-weight: 100;
             width: 100%;
             
@@ -99,7 +97,7 @@
 
             &.active {
                 color: #FAE81B;
-                border-left: 2px solid rgba(#FA1B63, 0.5);
+                border-left: 3px solid #B03059;
             }
         }
     }
@@ -110,3 +108,22 @@
         transition-delay: ($i * .15s) + .3s;
     } 
 }
+
+@media screen and (min-width: 767px) {
+    .nav {
+        width: 40rem;
+        width: 40vmin;
+        .menu-nav {
+            background: #255663;        
+            &__item {
+                &.open {
+                    font-size: 4rem;
+                    font-size: 3vmin;
+                }
+            }
+            &__link {
+                padding: 3vmin 0;
+            }
+        }
+    }
+  }
