@@ -1,6 +1,6 @@
 import React from "react"
 import {contactFormData as data} from "../mock_data/mockData"
-import FormFactory from "../components/form_factory/FormFactory"
+import FormFactory from "../generic/form_factory/FormFactory"
 
 const Contact = () => {
     

@@ -1,5 +1,5 @@
 import React from "react"
-import Nav from "../components/animated_router/Nav"
+import Nav from "../generic/animated_router/Nav"
 
 const SiteNav = ({openClass, toggleOpenState}) => {
     const navConfig = {
