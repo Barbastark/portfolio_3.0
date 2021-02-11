@@ -4,10 +4,11 @@ const PageBanner = ({children}) => {
 
     const bannerRef = useRef(null)
         
-    const parallax = () => {
+    const parallax = () => { console.log(window)
         const yPos = (window.pageYOffset / 3)
         const coords = `0px ${yPos}px`
         bannerRef.current.style.backgroundPosition = coords;
+        console.log(coords)
     }
 
     useEffect(() => {

@@ -1,4 +1,5 @@
 import React from "react"
+import PageBanner from "../components/PageBanner"
 import ProjectItem from "../components/ProjectItem"
 
 const Projects = () => {
@@ -23,17 +24,16 @@ const Projects = () => {
             src: "src/assets/project_images/friendo_desktop.png"
         }
     ]
-
     const projectItems = items.map(item => <ProjectItem item={item} />)
-
+   
     return(
         <main className="projects" >
-            <section className="projects__description">
+            <PageBanner >
                 <h2 className="page-heading">PROJEKT</h2>
                 <p className="page-text">
-                Below you can see some projects I've been working on lately. I divide each project into four follow-up areas: comprehensive research, wireframing, design & development. This process allows me to create great product with client goals in mind.
+                    Below you can see some projects I've been working on lately. I divide each project into four follow-up areas: comprehensive research, wireframing, design & development. This process allows me to create great product with client goals in mind.
                 </p>
-            </section>
+            </PageBanner>
             <section className="projects__container">
                 {projectItems}
             </section>

@@ -3,13 +3,6 @@
     width: 100vw;
     height: 100vh;
 
-    &__description {
-        padding: 7.5rem 1.5rem 15rem 1.5rem;
-        text-align: center;
-        background: url("../assets/hero-drawing-deepblue.png") no-repeat 25% bottom;
-        background-size: cover;
-    }
-
     &__container {
         background: $white;
 
