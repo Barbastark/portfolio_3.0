@@ -2,6 +2,7 @@
 @import "./menu";
 @import "./home";
 @import "./about";
+@import "./projects";
 @import "./contact";
 @import "./animated-router";
 
@@ -41,7 +42,7 @@ main.full-height {
 }
 
 .page-text {
-    color: #484641;
+    color: $white;
     font-weight: 100;
     font-size: 15px;
     line-height: 1.8;

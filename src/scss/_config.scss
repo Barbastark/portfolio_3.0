@@ -18,6 +18,7 @@ $orange: #FF652F;
 $ggwhite: #FFF;
 $log-cabin: #192116;
 $white:#f2f2f2;
+$section-border: #DBDBDB;
 $blue-sky: #B3DAF2;
 $forrest-green: #162614;
 $mustard: #8C6F16;
@@ -39,6 +40,7 @@ $bold: 700;
 @mixin transition($property: all, $duration: .3s, $timing: ease-in-out ) {
     -webkit-transition: $property $duration $timing;
     -o-transition: $property $duration $timing;
+    -moz-transition: $property $duration $timing;
     transition: $property $duration $timing;
 }
 

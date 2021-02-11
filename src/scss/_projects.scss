@@ -1,3 +1,63 @@
 .projects {
     background: #307082;
+    width: 100vw;
+    height: 100vh;
+
+    &__description {
+        padding: 7.5rem 1.5rem 15rem 1.5rem;
+        text-align: center;
+        background: url("../assets/hero-drawing-deepblue.png") no-repeat 25% bottom;
+        background-size: cover;
+    }
+
+    &__container {
+        background: $white;
+
+        &--item {
+            border-bottom: 1px solid $section-border;
+            padding: 4rem 1.5rem;
+            
+            section h2 {
+                font-size: 9vw;
+                text-align: center;
+                color: #B03059;
+                margin-bottom: 4rem;
+                font-weight: 400;
+                letter-spacing: 2px;
+            }
+            
+            section p {
+                color: #484641; 
+                margin-bottom: 4rem;
+            }
+
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+               
+            }
+
+            section button {
+                width: 80%;
+                padding: 1.4rem 0;
+                font-size: 1.5rem;
+                letter-spacing: 1px;
+                background-color: transparent;
+                border: 2px solid #B03059;
+                border-radius: 3px;
+                color: #B03059;
+                display: block;
+                margin: 4rem auto;
+
+            }
+        }
+    }
 }
+
+@media screen and (min-width: 768px) {
+    
+}
+
+
+  
