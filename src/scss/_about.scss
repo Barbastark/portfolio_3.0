@@ -1,17 +1,31 @@
 .about {
-    @include position-top-left();
+    background: #307082;   
     width: 100vw;
     height: 100vh;
-    flex: 1 0 auto;
-    background: #307082;   
-                  
-    
-    &__main {
-        padding: 4rem .8rem;
-        @include position-top-left();
-        width: 100%;
+     
+    &__container {
+        position: relative;
+        top: 50%;
+        background: $white;
+        border-bottom: 1px solid $section-border;
+        padding: 4rem 1.5rem;
+        z-index: 1;
         
-        p {color: $white;}   
+        h2 {
+            font-size: 9vw;
+            text-align: center;
+            color: #B03059;
+            margin-bottom: 4rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+        
+        p {
+            color: #484641; 
+            margin-bottom: 4rem;
+        }
+        
+           
         
     }
 }

@@ -3,11 +3,10 @@ import Nav from "../generic/animated_router/Nav"
 
 const SiteNav = ({openClass, toggleOpenState}) => {
     const navConfig = {
-        paths: ["/", "/aboutme", "/cv", "/projects", "/contact"],
+        paths: ["/", "/about", "/projects", "/contact"],
         routes: [
             { to: '/', linkText: "start" },
-            { to: '/aboutme', linkText: "om mig" },
-            { to: '/cv', linkText: "mitt cv" },
+            { to: '/about', linkText: "om mig" },
             { to: '/projects', linkText: "projekt" },
             { to: '/contact', linkText: "kontakt" }
            

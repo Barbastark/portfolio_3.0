@@ -5,6 +5,8 @@
 
     &__container {
         background: $white;
+        position: relative;
+        top: 50%;
 
         &--item {
             border-bottom: 1px solid $section-border;

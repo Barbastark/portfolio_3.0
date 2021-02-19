@@ -2,18 +2,16 @@ import React from "react"
 import AnimatedSwitch from "./generic/animated_router/AnimatedSwitch"
 import Header from "./components/Header"
 import Home from "./pages/Home"
-import AboutMe from "./pages/AboutMe"
-import Cv from "./pages/Cv"
+import About from "./pages/About"
 import Projects from "./pages/Projects"
 import Contact from "./pages/Contact"
 
 const App = () => { 
     const switchConfig = {
-        paths: ["/", "/aboutme", "/cv", "/projects", "/contact"],
+        paths: ["/", "/about", "/projects", "/contact"],
         routes: [
             { path: '/', Component: Home },
-            { path: '/aboutme', Component: AboutMe },
-            { path: '/cv', Component: Cv },
+            { path: '/about', Component: About },
             { path: '/projects', Component: Projects },
             { path: '/contact', Component: Contact }
         ],
@@ -25,6 +23,7 @@ const App = () => {
     
     return (
         <>
+
             <Header />
             <AnimatedSwitch config={switchConfig} />
         </>

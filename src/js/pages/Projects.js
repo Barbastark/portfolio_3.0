@@ -1,5 +1,5 @@
 import React from "react"
-import PageBanner from "../components/PageBanner"
+import Parallax from "../components/Parallax"
 import ProjectItem from "../components/ProjectItem"
 
 const Projects = () => {
@@ -28,12 +28,22 @@ const Projects = () => {
    
     return(
         <main className="projects" >
-            <PageBanner >
-                <h2 className="page-heading">PROJEKT</h2>
-                <p className="page-text">
-                    Below you can see some projects I've been working on lately. I divide each project into four follow-up areas: comprehensive research, wireframing, design & development. This process allows me to create great product with client goals in mind.
-                </p>
-            </PageBanner>
+            <Parallax 
+                speed={-0.5}
+                ypos={0}
+                containerClass="page-banner"
+            >
+                <Parallax
+                    speed={0.2}
+                    ypos={0}
+                    containerClass="page-banner__content"
+                >
+                    <h2 className="page-heading">PROJEKT</h2>
+                    <p className="page-text">
+                        Below you can see some projects I've been working on lately. I divide each project into four follow-up areas: comprehensive research, wireframing, design & development. This process allows me to create great product with client goals in mind.
+                    </p>
+                </Parallax>    
+            </Parallax>
             <section className="projects__container">
                 {projectItems}
             </section>

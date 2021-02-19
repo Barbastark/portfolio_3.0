@@ -1,3 +1,6 @@
+.full-height {
+    overflow: hidden;
+}
 .home {
     @include flex-center(column);
     color: $white;

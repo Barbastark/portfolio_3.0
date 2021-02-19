@@ -3,13 +3,19 @@
     position: fixed;
     bottom: 1.9rem;
     left: calc(100vw - 1.9rem - 53px);
-    height: 45px;
-    width: 53px;
+    height: 63px;
+    width: 63px;
+    border-radius: 90%;
+    background: rgba(#255663, 0.9);
     cursor: pointer;
+
+    &.open {
+        background: transparent;
+    }
 
     &__burger {
         @include transition();
-        @include position-top-right(absolute, 20px, 12px  );
+        @include position-top-right(absolute, 30px, 14px);
         width: 35px;
         height: 2px;
         background: $white;
@@ -19,15 +25,15 @@
             content: "";
             width: 35px;
             height: 2px;
-            background:$white;
+            background: $white;
         }
 
         &::before {
-            @include position-top-left(absolute, -15px)
+            @include position-top-left(absolute, -15px);
         }
         
         &::after {
-            @include position-top-left(absolute, 15px)
+            @include position-top-left(absolute, 15px);
         }
 
         &.open {
@@ -60,7 +66,7 @@
         @include transition();
         @include transform(translateX(-100vw) scale(0,0));
         height: 100vh;
-        overflow: hidden;
+        goverflow: hidden;
         background: #255663;
         list-style: none;
                 
@@ -73,7 +79,7 @@
             @include transform(skewY(30deg));
             font-size: 0vw;
             width: 100%;
-
+            
             &.open {
                 @include transform(skewY(0deg));
                 font-size: 9vmin;
@@ -87,7 +93,8 @@
             display: inline-block;
             text-transform: uppercase;
             padding: 3.2rem 0;
-            padding: 5vmin 0;
+            margin: 4vmin 0;
+            padding: 3vmin 0;
             font-weight: 100;
             width: 100%;
             
