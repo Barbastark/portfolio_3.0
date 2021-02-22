@@ -4,16 +4,12 @@
     width: 100%;
     height: 50%;
     z-index: 0;
-    background: /*linear-gradient(
-        to bottom,
-        rgba(#307082, 1.0),
-        rgba(#307082, 0.3) 
-    ),*/ url("../assets/hero-drawing-deepblue.png") no-repeat left bottom;
+    background: url("../assets/hero-drawing-deepblue.png") no-repeat left bottom;
     background-size: cover;
 
     &__content {
         @include flex-center(column);
-        @include position-top-left();
+        @include position-top-left(absolute);
         height: 100%;
         width: 100%;
         background: transparent;

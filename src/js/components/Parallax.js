@@ -1,15 +1,15 @@
 import React, {useEffect, useRef} from "react"
 
-const Parallax = ({speed, ypos, containerClass, children}) => {
-
+function Parallax({speed, ypos, containerClass, children}) {
+    
     const parallaxRef = useRef(null)
-    const handleScroll = throttle(scrollHandler, 10)
-   
+    const handleScroll = throttle(scrollHandler, 20)
+       
     function throttle(fn, wait) {
         
         let time = Date.now()
-
-        return function() {
+        
+        return () => {
             if ((time + wait - Date.now()) < 0) {
                 fn()
                 time = Date.now()
@@ -17,12 +17,15 @@ const Parallax = ({speed, ypos, containerClass, children}) => {
         }
     }
     
-    function scrollHandler() {
-       const pageTop = window.scrollY
-       const newYPos = (ypos - (pageTop * speed))
-       parallaxRef.current.style.transform = `translate(0, ${newYPos}px)`
+    function scrollHandler() { 
+       
+        const pageTop = window.scrollY
+        const newYPos = (ypos - (pageTop * speed))
+       
+        if(parallaxRef.current) {
+            parallaxRef.current.style.transform = `translate(0, ${newYPos}px)`
+        }
     }
-
 
     useEffect(() => {
         
@@ -30,8 +33,8 @@ const Parallax = ({speed, ypos, containerClass, children}) => {
         
         return () => {
             window.removeEventListener("scroll", handleScroll);
-          }
-    }, []) 
+        }
+    },[]) 
 
     return(
         <section
