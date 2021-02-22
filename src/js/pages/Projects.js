@@ -1,30 +1,48 @@
-import React from "react"
+import React, {useState} from "react"
 import Parallax from "../components/Parallax"
 import ProjectItem from "../components/ProjectItem"
 
 const Projects = () => {
 
+    const [modal, setModal] = useState(false) 
+          
+    function toggleModal() {
+      setModal(prevState => !prevState)
+    }
+
     const items = [
         {
-            src: "src/assets/project_images/friendo_thumb.jpg"
+            src: "src/assets/project_images/friendo_thumb.jpg",
+            hasModal: true
         },
         {
-            src: "src/assets/project_images/breakout.jpg"
+            src: "src/assets/project_images/breakout.jpg",
+            hasModal: true
         },
         {
-            src: "src/assets/project_images/movie_night.png"
+            src: "src/assets/project_images/movie_night.png",
+            hasModal: true
         },
         {
-            src: "src/assets/project_images/lights_out.png"
+            src: "src/assets/project_images/lights_out.png",
+            hasModal: true
         },
         {
-            src: "src/assets/project_images/bubbles.png"
+            src: "src/assets/project_images/bubbles.png",
+            hasModal: true
         },
         {
-            src: "src/assets/project_images/friendo_desktop.png"
+            src: "src/assets/project_images/friendo_desktop.png",
+            hasModal: true
         }
     ]
-    const projectItems = items.map(item => <ProjectItem item={item} />)
+    const projectItems = items.map(item => (
+        <ProjectItem 
+            item={item} 
+            modal={modal} 
+            toggleModal={toggleModal} 
+        />
+    ))
    
     return(
         <main className="projects" >

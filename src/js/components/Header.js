@@ -12,7 +12,7 @@ const Header = props => {
     }
 
     return (
-        <header>
+        <header className="site-header">
             <SiteNav 
                 openClass={openClass} 
                 toggleOpenState={toggleOpenState} 

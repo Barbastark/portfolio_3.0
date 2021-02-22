@@ -1,11 +1,9 @@
 import React from "react"
+import Modal from "../generic/modal/Modal"
 
-
-const ProjectItem = props => {
-    
-   
-    
-    const {src} = props.item
+const ProjectItem = ({item, modal, toggleModal}) => {
+       
+    const {src, hasModal} = item
       
     return (
         <article className="projects__container--item">
@@ -20,8 +18,15 @@ const ProjectItem = props => {
                 <figure>
                     <img src="src/assets/project_images/friendo_desktop.png" />
                 </figure>
-                <button>VISA MER</button>
+                <button
+                    className="more-info"
+                    onClick={toggleModal}
+                >VISA MER</button>
             </section>
+            <Modal 
+                displayModal={modal}
+                toggleModal={toggleModal}
+            />
         </article>
     )
 }
