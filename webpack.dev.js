@@ -11,9 +11,6 @@ module.exports = merge(common, {
         publicPath: "/"
     },
     devServer: {
-        contentBase: path.join(__dirname, 'dist'),
-        compress: true,
-        port: 3000,
         historyApiFallback: true
     },
     plugins: [

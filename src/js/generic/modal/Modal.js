@@ -1,6 +1,6 @@
 //Modal.js
 import React from 'react';
-const Modal = ({displayModal,toggleModal}) => {
+const Modal = ({displayModal, toggleModal, children}) => {
      
     function hideModal(e) {
         e.stopPropagation()
@@ -21,6 +21,7 @@ const Modal = ({displayModal,toggleModal}) => {
                         onClick={ hideModal }>&times;
                     </button>
                 </header>
+                {children}
             </main>
        </div>
      );

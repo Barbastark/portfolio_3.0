@@ -1,6 +1,6 @@
 .projects {
     background: #307082;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
 
     &__container {
@@ -10,13 +10,13 @@
 
         &--item {
             border-bottom: 1px solid $section-border;
-            padding: 4rem 1.5rem;
+            padding: 8rem 1.5rem;
             
             section h2 {
                 font-size: 9vw;
                 text-align: center;
                 color: #B03059;
-                margin-bottom: 4rem;
+                margin-bottom: 2rem;
                 font-weight: 400;
                 letter-spacing: 2px;
             }
@@ -24,6 +24,7 @@
             section p {
                 color: #484641; 
                 margin-bottom: 4rem;
+                
             }
 
             img {
@@ -42,16 +43,43 @@
                 border: 2px solid #B03059;
                 border-radius: 3px;
                 color: #B03059;
-                display: block;
-                margin: 4rem auto;
-
+                margin: 4rem auto 0 auto;
             }
         }
     }
 }
 
 @media screen and (min-width: 768px) {
-    
+    .projects {
+        &__container {
+            top: 100%;
+            &--item {
+                display: flex;
+                flex-direction: row-reverse;
+                max-width: 100rem;
+                margin: 0 auto;
+                
+                section:nth-child(1) {
+                    @include flex-center(column);
+
+                }
+                section h2 {
+                    font-size: 4vmin;
+                }
+                section p {
+                    padding: 0 5rem;
+                }
+                .more-info {
+                    margin: 0 auto;
+                }
+                .more-info:hover {
+                    background-color:#B03059;
+                    color: $white; 
+                }
+            }
+
+        }
+    }
 }
 
 
