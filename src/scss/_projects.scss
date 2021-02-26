@@ -34,7 +34,7 @@
                
             }
 
-            .more-info{
+            .btn-learn-more{
                 width: 80%;
                 padding: 1.4rem 0;
                 font-size: 1.5rem;
@@ -65,7 +65,6 @@
                 section:nth-child(1) {
                     margin-right: 20rem;
                     max-width: 60rem;
-
                 }
                 section h2 {
                     font-size: 3vmin;
@@ -75,15 +74,16 @@
                     font-size: 2rem;
                     font-weight: 500;
                 }
-                .more-info {
+                .btn-learn-more {
+                    @include transition();
                     margin: 0 auto;
                 }
-                .more-info:hover {
+                .btn-learn-more-hovered {
+                    @include transition();
                     background-color:#B03059;
                     color: $white; 
                 }
             }
-
         }
     }
 }

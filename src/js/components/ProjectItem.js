@@ -1,16 +1,23 @@
 import React, {useState} from "react"
 import Modal from "../generic/modal/Modal"
 import ImageSlider from "../components/ImageSlider"
+import useHover from "../hooks/useHover"
 
 const ProjectItem = ({item}) => {
        
     const [modal, setModal] = useState(false) 
+    const [hovered, btnRef] = useHover()
     const {src, text, hasModal} = item
           
     function toggleModal() {
       setModal(prevState => !prevState)
     }
     
+    function handleMouseOver(e) {
+        const {target} = e
+        console.log(target) 
+    }
+
     const sliderConfig = {
         sliderClass: "project-slider",
         images: [
@@ -40,8 +47,9 @@ const ProjectItem = ({item}) => {
                 CT Author Cup is traditional mountain bike race with eighteen years experience. I provided them everything from logo design, website design & development to printed materials.
                 </p>
                 <button
-                    className="more-info btn-lg"
+                    className={`btn-learn-more ${hovered ? "btn-learn-more-hovered" : ""} btn-lg`}
                     onClick={toggleModal}
+                    ref={btnRef}
                 >VISA MER</button>
             </section>
             <section>
@@ -49,7 +57,7 @@ const ProjectItem = ({item}) => {
                     <img src="src/assets/project_images/friendo_desktop.png" />
                 </figure>
                 <button
-                    className="more-info btn-sm"
+                    className="btn-learn-more btn-sm"
                     onClick={toggleModal}
                 >VISA MER</button>
             </section>

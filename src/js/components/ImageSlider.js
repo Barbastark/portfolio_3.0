@@ -74,11 +74,13 @@ const ImageSlider = props => {
                 newIndex = index + 1
             }
         }
+
         transition(imgEnter, imgLeave, enterClass, leaveClass, newIndex)
     }
 
-    function setElementHeight(height, el) {
-        el.style.height = `${height}px`
+    
+    function setNodeHeight() {
+        containerRef.current.style.height = `${refs.current[0].offsetHeight}px`
     }
 
     useEffect(() => {
@@ -86,17 +88,13 @@ const ImageSlider = props => {
         refs.current[0].classList.add("active")
 
         setTimeout(() => {
-            setElementHeight(refs.current[0].offsetHeight, containerRef.current)
+            setNodeHeight()
+            window.addEventListener("resize", setNodeHeight)
         }, 200)
-
-        window.onresize = () => {
-            setElementHeight(refs.current[0].offsetHeight, containerRef.current)
-        }
         
         return function() {
-            window.removeEventListener("resize")
+            window.removeEventListener("resize", setNodeHeight)
         }
-        
     },[]) 
 
     return (

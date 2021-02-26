@@ -5,6 +5,7 @@
         position: relative;
         display: flex;
         overflow: hidden;
+        
 
         img {
             position: absolute;
@@ -66,11 +67,12 @@
 
 @media screen and (min-width: 768px) {
     .image-slider {
+        gborder-top-left-radius: 3px;
+        gborder-top-right-radius: 3px;
         &__container {
-            img {
-                border-top-left-radius: 3px;
-                border-top-right-radius: 3px;
-            }
+            gborder-top-left-radius: 3px;
+            gborder-top-right-radius: 3px;
+            
         }
     }    
 }
