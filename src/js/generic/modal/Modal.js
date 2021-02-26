@@ -15,12 +15,13 @@ const Modal = ({displayModal, toggleModal, children}) => {
             <main 
                 className={`modal__content ${displayModal ? "open" : ""}`}
                 onClick={ e => e.stopPropagation() } >
-                <header className="header">
+                
                     <button 
                         className="close"
-                        onClick={ hideModal }>&times;
+                        onClick={ hideModal }>
+                            <i className="fas fa-times"></i>
                     </button>
-                </header>
+                
                 {children}
             </main>
        </div>

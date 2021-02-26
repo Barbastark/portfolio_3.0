@@ -54,20 +54,26 @@
         &__container {
             top: 100%;
             &--item {
+                width: 100%;
                 display: flex;
-                flex-direction: row-reverse;
-                max-width: 100rem;
-                margin: 0 auto;
+                justify-content: center;
+                padding: 16rem 1.5rem;
                 
+                section {
+                    height: auto;
+                }
                 section:nth-child(1) {
-                    @include flex-center(column);
+                    margin-right: 20rem;
+                    max-width: 60rem;
 
                 }
                 section h2 {
-                    font-size: 4vmin;
+                    font-size: 3vmin;
                 }
                 section p {
                     padding: 0 5rem;
+                    font-size: 2rem;
+                    font-weight: 500;
                 }
                 .more-info {
                     margin: 0 auto;

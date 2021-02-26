@@ -1,5 +1,6 @@
 import React, {useState} from "react"
 import Modal from "../generic/modal/Modal"
+import ImageSlider from "../components/ImageSlider"
 
 const ProjectItem = ({item}) => {
        
@@ -9,7 +10,28 @@ const ProjectItem = ({item}) => {
     function toggleModal() {
       setModal(prevState => !prevState)
     }
-      
+    
+    const sliderConfig = {
+        sliderClass: "project-slider",
+        images: [
+            {
+                src: "src/assets/project_images/friendo1.jpg",
+                alt: "en fin bild"
+            },
+            {
+                src: "src/assets/project_images/friendo2.jpg",
+                alt: "en fin bild"
+            },
+            {
+                src: "src/assets/project_images/friendo3.jpg",
+                alt: "en fin bild"
+            },
+            {
+                src: "src/assets/project_images/friendo7.jpg",
+                alt: "en fin bild"
+            }
+        ]
+    }  
     return (
         <article className="projects__container--item">
             <section>
@@ -35,7 +57,7 @@ const ProjectItem = ({item}) => {
                 displayModal={modal}
                 toggleModal={toggleModal}
             >
-                <h1>{text}</h1>    
+                <ImageSlider config={sliderConfig} />    
             </ Modal>
         </article>
     )

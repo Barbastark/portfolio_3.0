@@ -7,6 +7,7 @@
 @import "./contact";
 @import "./animated-router";
 @import "./modal";
+@import "./image-slider";
 
 html, body {
     width: 100%;
@@ -73,6 +74,7 @@ main.full-height {
         font-size: 2rem;
         line-height: 1.8;
     }
+    
     .btn-sm {
         display: none;
     }
