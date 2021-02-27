@@ -6,39 +6,43 @@
         display: flex;
         overflow: hidden;
         
-
         img {
             position: absolute;
             top: 0;
             left: 0;
             z-index: 0;
         }
+
         .enter-left {
-            @include transform(translateX(-100%));
-            z-index: 1; 
+            @include transform(translateX(-50%) rotateY(-90deg));
         }
+
         .enter-right {
-            @include transform(translateX(100%));
-            z-index: 1; 
+            @include transform(translateX(50%) rotateY(90deg));
         }
+        
         .enter-active {
-            @include transform(translateX(0)); 
-            @include transition();
+            @include transform(translateX(0) rotateY(0)); 
+            @include transition(transform, .6s, ease-in-out);
+            z-index: 2;
         }
         
         .leave-left {
-            @include transform(translateX(-100%)); 
-            @include transition();
+            @include transform(translateX(-50%) rotateY(-90deg)); 
+            @include transition(transform, .6s, ease-in-out);
             z-index: 1; 
         }
+        
         .leave-right {
-            @include transform(translateX(100%)); 
-            @include transition();
+            @include transform(translateX(50%) rotateY(90deg)); 
+            @include transition(transform, .6s, ease-in-out);
             z-index: 1; 
         }
+       
         .active {
             z-index: 1;
         }
+
         button {
             position: absolute;
             bottom: 0;
@@ -53,13 +57,10 @@
         }
 
         .btn-prev {
-            
             left: 0;
-
         }
 
         .btn-next {
-            
             right: 0;
         }
     }
@@ -67,11 +68,10 @@
 
 @media screen and (min-width: 768px) {
     .image-slider {
-        gborder-top-left-radius: 3px;
-        gborder-top-right-radius: 3px;
         &__container {
-            gborder-top-left-radius: 3px;
-            gborder-top-right-radius: 3px;
+            .btn-next:hover, .btn-prev:hover {
+                cursor: pointer;
+            }    
             
         }
     }    

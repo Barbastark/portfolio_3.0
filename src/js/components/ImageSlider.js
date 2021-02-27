@@ -1,52 +1,39 @@
+
 import React, {useState, useEffect, useRef} from "react"
+import {throttle, addRemoveClasses} from "../utilityFunctions"
 
 const ImageSlider = props => {
     
     const {sliderClass, images} = props.config
     const [index, setIndex] = useState(0)
+    const [disabled, setDisabled] = useState(false)
     const containerRef = useRef(null)
-    const refs = useRef([])    
-          
+    const imgRefs = useRef([])    
+    
     const imgNodes = images.map(({src, alt}, i) => (
         <img 
             src={src} 
             alt={alt}
             key={src + i}
-            ref={ref => { refs.current[i] = ref; }}
+            ref={ref => { imgRefs.current[i] = ref; }}
         />
     ))
+
+    const handleResize = throttle(setContainerHeight, 50)
     
-    function addRemoveClasses(action, el, arr) {
-        arr.forEach((className) => {
-            action === "remove" ? el.classList.remove(className) : el.classList.add(className)
-        })
-    }
-
-    function transition(imgEnter, imgLeave, enterFrom, leaveTo, newIndex ) {
-
-        imgEnter.classList.add(enterFrom) 
-        
-        setTimeout(() => {
-            
-            imgLeave.classList.add(leaveTo)
-            imgEnter.classList.add("enter-active")
-            
-            setTimeout(() => {
-            
-                addRemoveClasses("remove", imgLeave, [leaveTo, "active"])
-                addRemoveClasses("remove", imgEnter, [enterFrom, "enter-active"])
-                imgEnter.classList.add("active")
-                setIndex(newIndex)
-            
-            }, 200)
-
-        },100)
+    function setContainerHeight() {
+        containerRef.current.style.height = `${imgRefs.current[0].offsetHeight}px`
     }
 
     function handleClick(e) {
-          
+
+        setDisabled(true)
+
         const {name} = e.currentTarget
-        const imgLeave =  refs.current[index]
+        const imgLeave =  imgRefs.current[index]
+        const enterActiveClass = "enter-active"
+        const activeClass = "active"
+        
         let imgEnter, enterClass, leaveClass, newIndex
                 
         if(name === "prev") {
@@ -55,65 +42,91 @@ const ImageSlider = props => {
             leaveClass = "leave-right"
 
             if(index === 0) {
-                imgEnter = refs.current[images.length - 1] 
+                imgEnter = imgRefs.current[images.length - 1] 
                 newIndex = imgNodes.length - 1
             } else {
-                imgEnter = refs.current[index - 1]
+                imgEnter = imgRefs.current[index - 1]
                 newIndex = index - 1  
             }
+
         } else {
 
             enterClass = "enter-right"
             leaveClass = "leave-left"
             
             if(index === imgNodes.length - 1) {
-                imgEnter = refs.current[0]
+                imgEnter = imgRefs.current[0]
                 newIndex = 0
             } else {
-                imgEnter = refs.current[index + 1] 
+                imgEnter = imgRefs.current[index + 1] 
                 newIndex = index + 1
             }
         }
 
-        transition(imgEnter, imgLeave, enterClass, leaveClass, newIndex)
-    }
+        imgEnter.classList.add(enterClass) 
+        
+        setTimeout(() => {
+            
+            imgLeave.classList.add(leaveClass)
+            imgEnter.classList.add("enter-active")
+            
+            setTimeout(() => {
+            
+                addRemoveClasses("remove", imgLeave, [leaveClass, activeClass])
+                addRemoveClasses("remove", imgEnter, [enterClass, enterActiveClass])
+                imgEnter.classList.add(activeClass)
 
+                setIndex(newIndex)
+                setDisabled(false)
+                
+            }, 600)
+
+        },10)
+        
+    }
     
-    function setNodeHeight() {
-        containerRef.current.style.height = `${refs.current[0].offsetHeight}px`
-    }
-
     useEffect(() => {
                       
-        refs.current[0].classList.add("active")
+        imgRefs.current[0].classList.add("active")
 
         setTimeout(() => {
-            setNodeHeight()
-            window.addEventListener("resize", setNodeHeight)
+            setContainerHeight()
+            window.addEventListener("resize", handleResize)
         }, 200)
         
         return function() {
-            window.removeEventListener("resize", setNodeHeight)
+            window.removeEventListener("resize", handleResize)
         }
+
     },[]) 
 
     return (
         <section className="image-slider">
-            <figure className="image-slider__container" ref={containerRef}>
+            <figure 
+                className="image-slider__container" 
+                ref={containerRef}>
                 {imgNodes}
                 <button 
                     className="btn-prev"
                     type="button"
                     name="prev"
-                    onClick={handleClick}>
-                    <i className="fas fa-chevron-left"></i>    
+                    onClick={handleClick}
+                    disabled={disabled} >
+                    <i 
+                        className="fas fa-chevron-left" 
+                        disabled={disabled}>
+                    </i>    
                 </button>    
                 <button 
                     className="btn-next"
                     type="button"
                     name="next"
-                    onClick={handleClick}>
-                    <i className="fas fa-chevron-right"></i>    
+                    onClick={handleClick}
+                    disabled={disabled}>
+                    <i 
+                        className="fas fa-chevron-right" 
+                        disabled={disabled}>
+                    </i>    
                 </button>    
             </figure>
         </section>

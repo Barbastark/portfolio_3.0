@@ -1,22 +1,11 @@
 import React, {useEffect, useRef} from "react"
+import {throttle} from "../utilityFunctions"
 
 function Parallax({speed, ypos, containerClass, children}) {
     
     const parallaxRef = useRef(null)
     const handleScroll = throttle(scrollHandler, 20)
        
-    function throttle(fn, wait) {
-        
-        let time = Date.now()
-        
-        return () => {
-            if ((time + wait - Date.now()) < 0) {
-                fn()
-                time = Date.now()
-            }
-        }
-    }
-    
     function scrollHandler() { 
        
         const pageTop = window.scrollY

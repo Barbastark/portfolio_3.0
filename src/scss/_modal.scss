@@ -12,7 +12,8 @@
     overflow: auto;
     
     &__content {
-        @include transform(translateY(-100vh));
+        /*@include transform(translateY(-100vh));*/
+        @include transform(scale(0) translateY(-100vh));
         @include transition(all, .3s);
         background-color: $white;
         width: 100%;
@@ -29,14 +30,15 @@
             height: 3rem;
             
         }
-
+        
         .close:hover {
             cursor: pointer;
         }
         
         &.open {
-            @include transform(translateY(0));
-            transition: transform .3s ease-in-out .4s;
+            /*@include transform(translateY(0));*/
+            @include transform(scale(1) translateY(0));
+            transition: transform .6s ease-in-out .4s;
         }
 
     }
