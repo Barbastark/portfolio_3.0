@@ -20,7 +20,7 @@ html {
 }
 
 #root {
-    background: #307082;
+    background: $background-color-light;
     display: flex;
     flex-direction: column;
     goverflow-x: hidden;
@@ -36,7 +36,7 @@ main.full-height {
 }
 
 .page-heading {
-    color: #FAE81B;
+    color: $primary-accent-color;
     font-weight: 200;
     font-size: 9vw;
     letter-spacing: 7px;

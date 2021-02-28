@@ -6,7 +6,7 @@
     height: 63px;
     width: 63px;
     border-radius: 90%;
-    background: rgba(#255663, 0.9);
+    background: rgba($background-color-dark, 0.9);
     cursor: pointer;
 
     &.open {
@@ -67,7 +67,7 @@
         @include transform(translateX(-100vw) scale(0,0));
         height: 100vh;
         goverflow: hidden;
-        background: #255663;
+        background: $background-color-dark;
         list-style: none;
                 
         &.open {
@@ -103,8 +103,8 @@
             }
 
             &.active {
-                color: #FAE81B;
-                border-left: 3px solid #B03059;
+                color: $primary-accent-color;
+                border-left: 3px solid $secondary-accent-color;
             }
         }
     }
@@ -121,7 +121,7 @@
         width: 40rem;
         width: 40vmin;
         .menu-nav {
-            background: #255663;        
+            background: $background-color-dark;        
             &__item {
                 &.open {
                     font-size: 4rem;

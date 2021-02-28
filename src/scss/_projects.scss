@@ -1,5 +1,5 @@
 .projects {
-    background: #307082;
+    background: $background-color-light;
     width: 100%;
     height: 100vh;
 
@@ -15,14 +15,14 @@
             section h2 {
                 font-size: 9vw;
                 text-align: center;
-                color: #B03059;
+                color: $secondary-accent-color;
                 margin-bottom: 2rem;
                 font-weight: 400;
                 letter-spacing: 2px;
             }
             
             section p {
-                color: #484641; 
+                color: $section-text; 
                 margin-bottom: 4rem;
                 
             }
@@ -40,9 +40,9 @@
                 font-size: 1.5rem;
                 letter-spacing: 1px;
                 background-color: transparent;
-                border: 2px solid #B03059;
+                border: 2px solid $secondary-accent-color;
                 border-radius: 3px;
-                color: #B03059;
+                color: $secondary-accent-color;
                 margin: 4rem auto 0 auto;
             }
         }
@@ -80,7 +80,7 @@
                 }
                 .btn-learn-more-hovered {
                     @include transition();
-                    background-color:#B03059;
+                    background-color:$secondary-accent-color;
                     color: $white; 
                 }
             }

@@ -1,5 +1,5 @@
 .about {
-    background: #307082;   
+    background: $background-color-light;   
     width: 100vw;
     height: 100vh;
      
@@ -14,14 +14,14 @@
         h2 {
             font-size: 9vw;
             text-align: center;
-            color: #B03059;
+            color: $secondary-accent-color;
             margin-bottom: 4rem;
             font-weight: 400;
             letter-spacing: 2px;
         }
         
         p {
-            color: #484641; 
+            color: $section-text; 
             margin-bottom: 4rem;
         }
         

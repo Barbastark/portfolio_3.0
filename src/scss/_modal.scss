@@ -25,7 +25,7 @@
             right: 2rem;
             border: 0;
             background: transparent; 
-            color: #aaa;
+            color: $section-text;
             font-size: 3rem;
             height: 3rem;
             
@@ -36,7 +36,6 @@
         }
         
         &.open {
-            /*@include transform(translateY(0));*/
             @include transform(scale(1) translateY(0));
             transition: transform .6s ease-in-out .4s;
         }
