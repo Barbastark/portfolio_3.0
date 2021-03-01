@@ -1,67 +1,28 @@
+/*Common*/
+.slide-backward-exit, .slide-forward-exit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: translateX(0%) rotateY(0);
+}
 
-/*Forward*/
+.slide-forward-exit-active, .slide-backward-enter {
+  transform: translateX(-50%) rotateY(-90deg);
+}
+
+.slide-forward-enter.slide-forward-enter-active, .slide-backward-enter.slide-backward-enter-active {
+  transform: translateX(0%);
+}
+
+.slide-forward-enter, .slide-backward-exit-active {
+  transform: translateX(50%) rotateY(90deg);
+}
 
 .slide-forward-enter,
-.slide-forward-exit {
-  transition: all 500ms ease-out;
-  transition-delay: .3s;
-}
-
-.slide-forward-enter {
-  transform: translateX(100%) rotateY(180deg);
-  
-}
-
-.slide-forward-enter.slide-forward-enter-active {
-  transform: translateX(0%);
-  
-}
-
-.slide-forward-exit {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transform: translateX(0%) rotateY(0);
-}
-
-.slide-forward-exit-active {
-  transform: translateX(-100%) rotateY(-180deg);
-}
-
-/*Backward*/
-
+.slide-forward-exit,
 .slide-backward-enter,
 .slide-backward-exit {
-  transition: all 500ms ease-out;
+  transition: all .5s ease-out;
   transition-delay: .3s;
-}
-
-.slide-backward-enter {
-  transform: translateX(-100%) rotateY(-180deg);
-}
-
-.slide-backward-enter.slide-backward-enter-active {
-  transform: translateX(0%);
-}
-
-.slide-backward-exit {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transform: translateX(0%) rotateY(0);
-}
-
-.slide-backward-exit-active {
-  transform: translateX(100%) rotateY(180deg);
-}
-
-@media screen and (min-width: 767px) {
-   .slide-forward-enter,
-   .slide-forward-exit,
-   .slide-backward-enter,
-   .slide-backward-exit {
-     gtransition: all 2s ease-out;
-   }
 }

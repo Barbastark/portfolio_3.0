@@ -4,7 +4,7 @@ import { TransitionGroup, CSSTransition } from "react-transition-group"
 
 
 const AnimatedSwitch = props => {
-    
+    window.scrollTo(0, 0)
     const {paths, routes, classNames, pageData} = props.config
     const location = useLocation()
     const {state, pathname, key} = location
