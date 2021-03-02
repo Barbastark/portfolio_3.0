@@ -7,62 +7,39 @@ const ProjectItem = ({item}) => {
        
     const [modal, setModal] = useState(false) 
     const [hovered, btnRef] = useHover()
-    const {src, text} = item
+    const {projectHeader: header, projectIntro: intro, projectImg: img, btnText, sliderData} = item
           
     function toggleModal() {
       setModal(prevState => !prevState)
     }
-    
-    const sliderConfig = {
-        sliderClass: "project-slider",
-        images: [
-            {
-                src: "src/assets/project_images/friendo1.jpg",
-                alt: "en fin bild"
-            },
-            {
-                src: "src/assets/project_images/friendo2.jpg",
-                alt: "en fin bild"
-            },
-            {
-                src: "src/assets/project_images/friendo3.jpg",
-                alt: "en fin bild"
-            },
-            {
-                src: "src/assets/project_images/friendo7.jpg",
-                alt: "en fin bild"
-            }
-        ]
-    }  
-    
+            
     return (
         <article className="projects__container--item">
             <section>
-                <h2>Ett fint projekt</h2>
+                <h2>{header}</h2>
                 <p className="page-text">
-                    CT Author Cup is traditional mountain bike race with eighteen years experience. 
-                    I provided them everything from logo design, website design & development to printed materials.
+                    {intro}
                 </p>
                 <button
                     className={`btn-learn-more btn-lg ${hovered ? "btn-learn-more-hovered" : ""}`}
                     onClick={toggleModal}
                     ref={btnRef}
-                >VISA MER</button>
+                >{btnText}</button>
             </section>
             <section>
                 <figure>
-                    <img src="src/assets/project_images/friendo_desktop.png" />
+                    <img src={img} />
                 </figure>
                 <button
                     className="btn-learn-more btn-sm"
                     onClick={toggleModal}
-                >VISA MER</button>
+                >{btnText}</button>
             </section>
             <Modal 
                 displayModal={modal}
                 toggleModal={toggleModal}
             >
-                <ImageSlider config={sliderConfig} />    
+                <ImageSlider config={sliderData} />    
             </ Modal>
         </article>
     )

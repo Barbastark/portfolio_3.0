@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react"
-import {homePageData as pageData} from "../mock_data/mockData"
+import {homePageData as pageData} from "../mock_data/homePageData"
 
 const Home = () => {
     

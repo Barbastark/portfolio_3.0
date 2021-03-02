@@ -1,6 +1,6 @@
 import React from "react"
-import {aboutPageData} from "../mock_data/mockData"
-import {cvData} from"../mock_data/mockData"
+import {aboutPageData} from "../mock_data/aboutPageData"
+import {cvData} from"../mock_data/cvData"
 import Parallax from "../components/Parallax"
 
 const About = () => {

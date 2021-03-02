@@ -4,7 +4,7 @@ import {throttle, addRemoveClasses} from "../utilityFunctions"
 
 const ImageSlider = props => {
     
-    const {sliderClass, images} = props.config
+    const {sliderImgs: images} = props.config
     const [index, setIndex] = useState(0)
     const [disabled, setDisabled] = useState(false)
     const containerRef = useRef(null)

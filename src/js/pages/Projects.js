@@ -1,44 +1,14 @@
-import React, {useEffect, useRef} from "react"
+import React from "react"
 import Parallax from "../components/Parallax"
 import ProjectItem from "../components/ProjectItem"
 import useSmoothScroll from "../hooks/useSmoothScroll"
+import {projectItems as items} from "../mock_data/projectsData"
 
 const Projects = () => {
 
     const [linkRef, targetRef] = useSmoothScroll()    
 
-    const items = [
-        {
-            src: "src/assets/project_images/friendo_thumb.jpg",
-            text: "Header1",
-            hasModal: true
-        },
-        {
-            src: "src/assets/project_images/breakout.jpg",
-            text: "Header2",
-            hasModal: true
-        },
-        {
-            src: "src/assets/project_images/movie_night.png",
-            text: "Header3",
-            hasModal: true
-        },
-        {
-            src: "src/assets/project_images/lights_out.png",
-            text: "Header4",
-            hasModal: true
-        },
-        {
-            src: "src/assets/project_images/bubbles.png",
-            text: "Header5",
-            hasModal: true
-        },
-        {
-            src: "src/assets/project_images/friendo_desktop.png",
-            text: "Header6",
-            hasModal: true
-        }
-    ]
+    
     const projectItems = items.map((item, i) => (
         <ProjectItem 
             key={i}
