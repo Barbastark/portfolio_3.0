@@ -1,6 +1,6 @@
-import {useState, useEffect, useRef} from "react"
+import {useEffect, useRef} from "react"
 
-const useSmoothScroll = () => {
+const useSmoothScroll = (useHash = false) => {
 
     const linkRef = useRef(null)
     const targetRef = useRef(null)
@@ -16,11 +16,11 @@ const useSmoothScroll = () => {
             window.scrollTo(0, scrollTop) 
                         
             if (scrollTop >= scrollTo) {
-                clearInterval(id)
+                clearInterval(intervalId)
             }
         }
         
-        const id = setInterval(scroll, 10)
+        const intervalId = setInterval(scroll, 10)
     }
 
     function init(e) {
@@ -28,18 +28,28 @@ const useSmoothScroll = () => {
         const hash = linkRef.current.hash 
         
         if (hash) {
+            
             e.preventDefault();
             smoothScroll(targetRef.current)
-            //window.location.hash = hash;
+            
+            if(useHash) {
+                window.location.hash = hash;
+            }
         }
     }
 
     useEffect(() => {
         
-        linkRef.current.addEventListener("click", init)
-        
-        return () => linkRef.current.addEventListener("click", init)
-       
+        /**
+         * const current fixes bug caused by React 17
+         * issue: linkRef.current is null when component unmounts
+         * remove as soon as the careless individuals responsible for this mess
+         * have done their job? :)    
+         *  */  
+
+        const current = linkRef.current 
+        current.addEventListener("click", init)
+        return () => current.removeEventListener("click", init)
     }, [])
 
     return [ linkRef, targetRef ]

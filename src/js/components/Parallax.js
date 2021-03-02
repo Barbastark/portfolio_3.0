@@ -19,10 +19,8 @@ function Parallax({speed, ypos, containerClass, children}) {
     useEffect(() => {
         
         window.addEventListener("scroll", handleScroll, true)
+        return () => window.removeEventListener("scroll", handleScroll);
         
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        }
     },[]) 
 
     return(

@@ -7,17 +7,28 @@ const useHover = () => {
 
     const enter = () => setHovered(true)
     const leave = () => setHovered(false)
-   
+    
     useEffect(() => {
-        ref.current.addEventListener("mouseenter", enter)
-        ref.current.addEventListener("mouseleave", leave)
+        
+        /**
+         * const current fixes bug caused by React 17
+         * issue: linkRef.current is null when component unmounts
+         * remove as soon as the careless individuals responsible for this mess
+         * have done their job? :)    
+         *  */
+
+        const current = ref.current   
+    
+        current.addEventListener("mouseenter", enter)
+        current.addEventListener("mouseleave", leave)
 
         return () => {
-            ref.current.removeEventListener("mouseenter", enter)
-            ref.current.removeEventListener("mouseleave", leave)
+            current.removeEventListener("mouseenter", enter)
+            current.removeEventListener("mouseleave", leave)
         } 
 
     }, []) 
+
     return [hovered, ref]    
 }
 

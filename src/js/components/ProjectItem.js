@@ -7,17 +7,12 @@ const ProjectItem = ({item}) => {
        
     const [modal, setModal] = useState(false) 
     const [hovered, btnRef] = useHover()
-    const {src, text, hasModal} = item
+    const {src, text} = item
           
     function toggleModal() {
       setModal(prevState => !prevState)
     }
     
-    function handleMouseOver(e) {
-        const {target} = e
-        console.log(target) 
-    }
-
     const sliderConfig = {
         sliderClass: "project-slider",
         images: [
@@ -39,15 +34,17 @@ const ProjectItem = ({item}) => {
             }
         ]
     }  
+    
     return (
         <article className="projects__container--item">
             <section>
                 <h2>Ett fint projekt</h2>
                 <p className="page-text">
-                CT Author Cup is traditional mountain bike race with eighteen years experience. I provided them everything from logo design, website design & development to printed materials.
+                    CT Author Cup is traditional mountain bike race with eighteen years experience. 
+                    I provided them everything from logo design, website design & development to printed materials.
                 </p>
                 <button
-                    className={`btn-learn-more ${hovered ? "btn-learn-more-hovered" : ""} btn-lg`}
+                    className={`btn-learn-more btn-lg ${hovered ? "btn-learn-more-hovered" : ""}`}
                     onClick={toggleModal}
                     ref={btnRef}
                 >VISA MER</button>
