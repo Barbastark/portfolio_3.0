@@ -2,6 +2,7 @@ import React from "react"
 import Nav from "../generic/animated_router/Nav"
 
 const SiteNav = ({openClass, toggleOpenState}) => {
+
     const navConfig = {
         paths: ["/", "/about", "/projects", "/contact"],
         routes: [
@@ -21,6 +22,7 @@ const SiteNav = ({openClass, toggleOpenState}) => {
         },
         clickHandler: toggleOpenState
     }
+    
     return(
          <Nav config={navConfig} />
     )

@@ -2,12 +2,12 @@ import React, {useState} from "react"
 import SiteNav from "./SiteNav"
 import Hamburger from "./Hamburger"
 
-const Header = props => {
+const Header = () => {
 
     const [open, setOpen] = useState(false)
     const openClass = open ? "open" : ""
 
-    const toggleOpenState = () => {
+    function toggleOpenState() {
         setOpen(prevState => !prevState)
     }
 

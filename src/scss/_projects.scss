@@ -24,14 +24,12 @@
             section p {
                 color: $section-text; 
                 margin-bottom: 4rem;
-                
             }
 
             img {
                 display: block;
                 width: 100%;
                 height: auto;
-               
             }
 
             .btn-learn-more{
@@ -39,6 +37,7 @@
                 padding: 1.4rem 0;
                 font-size: 1.5rem;
                 letter-spacing: 1px;
+                text-transform: uppercase;
                 background-color: transparent;
                 border: 2px solid $secondary-accent-color;
                 border-radius: 3px;

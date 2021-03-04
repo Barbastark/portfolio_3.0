@@ -21,5 +21,3 @@ const Contact = () => {
 }
 
 export default Contact
-
-//136262

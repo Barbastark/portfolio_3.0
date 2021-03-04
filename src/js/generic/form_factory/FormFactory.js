@@ -1,11 +1,11 @@
-import React, {useState, useRef} from "react"
+import React, {useState} from "react"
 import FormNode from "./FormNode"
 
 const FormFactory = (formData, state) => {
 
     const [inputData, setInputData] = useState(state)
     
-    const handleChange = e => { 
+    function handleChange(e) { 
         
         const {name, value} = e.target
         
@@ -14,9 +14,8 @@ const FormFactory = (formData, state) => {
         ))
     }
 
-    const handleSubmit = e => {
+    function handleSubmit(e) {
         e.preventDefault()
-        console.log("clicked!!")
     }
     
     const formNodes = formData.map(obj => {

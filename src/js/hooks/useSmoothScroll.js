@@ -5,7 +5,7 @@ const useSmoothScroll = (useHash = false) => {
     const linkRef = useRef(null)
     const targetRef = useRef(null)
 
-    function smoothScroll(el, scrollBy = 30) {
+    function smoothScroll(el, scrollBy = 20) {
             
         let scrollTop = window.scrollY        
         let scrollTo = el.getBoundingClientRect().top - ( -scrollTop )
@@ -20,7 +20,7 @@ const useSmoothScroll = (useHash = false) => {
             }
         }
         
-        const intervalId = setInterval(scroll, 10)
+        const intervalId = setInterval(scroll, 1)
     }
 
     function init(e) {

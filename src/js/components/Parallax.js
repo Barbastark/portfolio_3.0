@@ -1,7 +1,7 @@
 import React, {useEffect, useRef} from "react"
 import {throttle} from "../utilityFunctions"
 
-function Parallax({speed, ypos, containerClass, children}) {
+const Parallax = ({speed, ypos, containerClass, children}) => {
     
     const parallaxRef = useRef(null)
     const handleScroll = throttle(scrollHandler, 20)

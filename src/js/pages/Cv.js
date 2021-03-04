@@ -1,7 +1,7 @@
 import React from "react"
 import {cvData as data} from "../mock_data/mockData"
 
-const Cv = props => {
+const Cv = () => {
     
     const {headerText, content} = data
     

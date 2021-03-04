@@ -7,7 +7,6 @@ import {projectItems as items} from "../mock_data/projectsData"
 const Projects = () => {
 
     const [linkRef, targetRef] = useSmoothScroll()    
-
     
     const projectItems = items.map((item, i) => (
         <ProjectItem 
