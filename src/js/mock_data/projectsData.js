@@ -79,9 +79,9 @@ export const projectItems = [
         }
     },
     {
-        projectHeader: "Friendo",
+        projectHeader: "Lights out",
         projectIntro:"CT Author Cup is traditional mountain bike race with eighteen years experience.I provided them everything from logo design, website design & development to printed materials.",
-        projectImg: "src/assets/project_images/friendo_desktop.png",
+        projectImg: "src/assets/project_images/lights-out-project-image.png",
         btnText: "mer info",
         sliderData: {
             sliderImgs: [
