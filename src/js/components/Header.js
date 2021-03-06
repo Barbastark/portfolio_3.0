@@ -19,7 +19,8 @@ const Header = () => {
             />
             <Hamburger 
                 openClass={openClass} 
-                toggleOpenState={toggleOpenState} 
+                toggleOpenState={toggleOpenState}
+                open={open} 
             />
         </header>
     )
