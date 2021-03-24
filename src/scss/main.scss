@@ -8,12 +8,15 @@
 @import "./animated-router";
 @import "./modal";
 @import "./image-slider";
+@import "./tabbed-panel";
 
 html, body {
     width: 100%;
     height: 100%;
 }
-
+body {
+    overflow-x: hidden;
+}
 html {
     font-size: 10px;
     font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

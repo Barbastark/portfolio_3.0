@@ -45,7 +45,7 @@ const useSmoothScroll = (useHash = false) => {
          * issue: linkRef.current is null when component unmounts
          * remove as soon as the careless individuals responsible for this mess
          * have done their job? :)    
-         *  */  
+         **/  
 
         const current = linkRef.current 
         current.addEventListener("click", init)

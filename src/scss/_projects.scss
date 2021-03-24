@@ -13,7 +13,7 @@
             padding: 8rem 1.5rem;
             
             section h2 {
-                font-size: 9vw;
+                font-size: 9vmin;
                 text-align: center;
                 color: $secondary-accent-color;
                 margin-bottom: 2rem;
@@ -32,7 +32,7 @@
                 height: auto;
             }
 
-            .btn-learn-more{
+            .btn-learn-more {
                 width: 80%;
                 padding: 1.4rem 0;
                 font-size: 1.5rem;
@@ -61,7 +61,7 @@
                 section {
                     height: auto;
                 }
-                section:nth-child(1) {
+                > section:first-child {
                     margin-right: 20rem;
                     max-width: 60rem;
                 }
